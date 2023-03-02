@@ -1,4 +1,4 @@
-cahr	*ft_strncat(char *s1, char *s2, unsigned int n)
+char	*ft_strncat(char *s1, char *s2, unsigned int n)
 {
 	int	i;
 	int	j;
