@@ -1,7 +1,16 @@
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rvaz <rvaz@student.42.fr>                  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/03/10 15:20:10 by rvaz              #+#    #+#             */
+/*   Updated: 2023/03/10 15:20:10 by rvaz             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+//remove this
 int	ft_isdigit(unsigned char c)
 {
 	if (c >= '0' && c <= '9')
@@ -9,8 +18,7 @@ int	ft_isdigit(unsigned char c)
 	return (0);
 }
 
-
-static int ft_isspace(char c)
+static int	ft_isspace(char c)
 {
 	if (c == 0 || c >= 9 && c <= 13 || c == 32)
 		return (1);
@@ -20,11 +28,12 @@ static int ft_isspace(char c)
 int	ft_atoi(const char *nptr)
 {
 	long int	result;
-	int	i;
-	int signal = 1;
+	int			i;
+	int			signal;
 
 	result = 0;
 	i = 0;
+	signal = 1;
 	while (ft_isspace(nptr[i]) == 1)
 		i++;
 	if (nptr[i] == '+')
@@ -38,8 +47,11 @@ int	ft_atoi(const char *nptr)
 		result = (result * 10) + (nptr[i++] - '0');
 	return (result * signal);
 }
+/*
+#include <stdio.h>
 
 int	main(void)
 {
 	printf("FINAL: %d\n", ft_atoi("   \n \t\t \r99987.55"));
 }
+*/
